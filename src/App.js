@@ -1,25 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import Box from './components/Box';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box background="chill-1" pad="large" margin="large" gap="large" direction="row">
+      <Box flex="shrink" background="chill-2">Inside a row box</Box>
+      <Box gap="large" background="brand" pad="small" flex="grow">
+        <div>Nested a column box</div>
+        <div>Nested a column box</div>
+      </Box>
+      <Box flex="grow" background="nature-1" pad="small" round={[{ corner: 'top-right', size: 'large' }, { corner: 'bottom-left', size: 'large' }]}>Inside a row box</Box>
+    </Box>
   );
 }
 
